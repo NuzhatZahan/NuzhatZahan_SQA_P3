@@ -241,6 +241,17 @@ time.sleep(2)
 cart = driver.find_element(By.LINK_TEXT, 'Add to cart')
 cart.click()
 time.sleep(2)
-shopping = driver.find_element(By.CSS_SELECTOR, 'span.Continue shopping')
+shopping = driver.find_element(By.CSS_SELECTOR, ("[title=\"Continue shopping\"]"))
 shopping.click()
+time.sleep(2)
+
+
+##### Tshirt Section #####
+tshirt =driver.find_element(By.CSS_SELECTOR, ("[title=\"T-shirts\"]"))
+tshirt.click()
+bluefilter =  driver.find_element(By.ID, 'layered_id_attribute_group_14')
+bluefilter.click()
+time.sleep(2)
+cart_shirt = driver.find_element(By.LINK_TEXT, 'Add to cart')
+cart_shirt.click()
 time.sleep(2)
