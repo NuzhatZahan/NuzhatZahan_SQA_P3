@@ -13,7 +13,7 @@ driver.get("http://automationpractice.com/index.php")
 
 login = driver.find_element(By.CLASS_NAME, 'login')
 login.click()
-time.sleep(5)
+time.sleep(2)
 
 #####1st account Create######
 
@@ -226,4 +226,21 @@ time.sleep(1)
 submitlogin = driver.find_element(By.ID, 'SubmitLogin')
 submitlogin.click()
 
-time.sleep(5)
+time.sleep(2)
+
+#####Casual Dresses Section ####
+
+women = driver.find_element(By.CLASS_NAME, 'sf-with-ul')
+women.click()
+dress = driver.find_element(By.LINK_TEXT, 'Dresses')
+dress.click()
+cdress = driver.find_element(By.LINK_TEXT, 'Casual Dresses')
+cdress.click()
+time.sleep(2)
+
+cart = driver.find_element(By.LINK_TEXT, 'Add to cart')
+cart.click()
+time.sleep(2)
+shopping = driver.find_element(By.CSS_SELECTOR, 'span.Continue shopping')
+shopping.click()
+time.sleep(2)
