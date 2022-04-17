@@ -287,3 +287,9 @@ time.sleep(1)
 confirm = driver.find_element(By.XPATH, '//button[normalize-space()="I confirm my order"]')
 confirm.click()
 time.sleep(5)
+
+
+##### sign out task #####
+logout = driver.find_element(By.CSS_SELECTOR, ("[title=\"Log me out\"]"))
+logout.click()
+time.sleep(5)
