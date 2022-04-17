@@ -247,11 +247,43 @@ time.sleep(2)
 
 
 ##### Tshirt Section #####
-tshirt =driver.find_element(By.CSS_SELECTOR, ("[title=\"T-shirts\"]"))
-tshirt.click()
-bluefilter =  driver.find_element(By.ID, 'layered_id_attribute_group_14')
-bluefilter.click()
+#tshirts= driver.find_element(By.CSS_SELECTOR, ("[title=\"T-shirts\"]"))
+#tshirts.click()
+#tshirts = driver.find_element(By.LINK_TEXT, 'T-shirts')
+#tshirts.click()
+#time.sleep(1)
+#bluefilter =  driver.find_element(By.ID, 'layered_id_attribute_group_14')
+#bluefilter.click()
+#time.sleep(2)
+#cart_shirt = driver.find_element(By.LINK_TEXT, 'Add to cart')
+#cart_shirt.click()
+#time.sleep(2)
+
+
+##### Check out Section ####
+
+ccart = driver.find_element(By.CSS_SELECTOR, ("[title=\"View my shopping cart\"]"))
+ccart.click()
+time.sleep(1)
+
+checkout = driver.find_element(By.LINK_TEXT, 'Proceed to checkout')
+checkout.click()
 time.sleep(2)
-cart_shirt = driver.find_element(By.LINK_TEXT, 'Add to cart')
-cart_shirt.click()
-time.sleep(2)
+
+ncheckout = driver.find_element(By.NAME, 'processAddress')
+ncheckout.click()
+time.sleep(5)
+
+terms = driver.find_element(By.NAME, 'cgv')
+terms.click()
+
+order = driver.find_element(By.NAME, 'processCarrier')
+order.click()
+
+payment = driver.find_element(By.CSS_SELECTOR, ("[title=\"Pay by check.\"]"))
+payment.click()
+time.sleep(1)
+
+confirm = driver.find_element(By.XPATH, '//button[normalize-space()="I confirm my order"]')
+confirm.click()
+time.sleep(5)
