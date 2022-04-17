@@ -3,8 +3,9 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
-
+from selenium.webdriver.common.action_chains import ActionChains
 import time
+
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 
@@ -247,17 +248,27 @@ time.sleep(2)
 
 
 ##### Tshirt Section #####
-#tshirts= driver.find_element(By.CSS_SELECTOR, ("[title=\"T-shirts\"]"))
+
+tshirts = driver.find_element(By.CSS_SELECTOR, ("[title=\"T-shirts\"]"))
+
+#tshirts.click() #click isn't working properly
+#ActionChains(driver).move_to_element(tshirts).click(tshirts).perform()
 #tshirts.click()
-#tshirts = driver.find_element(By.LINK_TEXT, 'T-shirts')
+
+driver.get('http://automationpractice.com/index.php?id_category=5&controller=category') #using url to test further action
+driver.implicitly_wait(10)
+#ActionChains(driver).move_to_element(tshirts).click(tshirts).perform()
 #tshirts.click()
-#time.sleep(1)
-#bluefilter =  driver.find_element(By.ID, 'layered_id_attribute_group_14')
-#bluefilter.click()
-#time.sleep(2)
-#cart_shirt = driver.find_element(By.LINK_TEXT, 'Add to cart')
-#cart_shirt.click()
-#time.sleep(2)
+time.sleep(2)
+bluefilter =  driver.find_element(By.ID, 'layered_id_attribute_group_14')
+bluefilter.click()
+time.sleep(2)
+cart_shirt = driver.find_element(By.LINK_TEXT, 'Add to cart')
+cart_shirt.click()
+time.sleep(2)
+shopping_s = driver.find_element(By.CSS_SELECTOR, ("[title=\"Continue shopping\"]"))
+shopping_s.click()
+time.sleep(2)
 
 
 ##### Check out Section ####
